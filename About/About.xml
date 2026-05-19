@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>VFE Classical - Centurion Armor Performance Patch</name>
+  <author>captainmuscles</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>captainmuscles.vfec.centurionarmorpatch</packageId>
+  <description>Replaces VFE Classical's per-tick Centurion Armor aura with a throttled implementation that updates every 300 ticks.</description>
+  <modDependencies>
+    <li>
+      <packageId>OskarPotocki.VFE.Classical</packageId>
+      <displayName>Vanilla Factions Expanded - Classical</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2787850474</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>OskarPotocki.VFE.Classical</li>
+  </loadAfter>
+</ModMetaData>

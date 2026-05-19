@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Classical</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/HediffDef[defName="VFEC_CenturionArmor"]/comps/li[@Class="HediffCompProperties_GiveHediffsInRange"]</xpath>
+          <value>
+            <li Class="VFECCenturionArmorPatch.HediffCompProperties_GiveHediffsInRangeThrottled">
+              <range>1.9</range>
+              <targetingParameters>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetMechs>false</canTargetMechs>
+              </targetingParameters>
+              <hediff>VFEC_CenturionArmorBuff</hediff>
+              <onlyPawnsInSameFaction>true</onlyPawnsInSameFaction>
+              <intervalTicks>300</intervalTicks>
+              <buffDurationTicks>360</buffDurationTicks>
+            </li>
+          </value>
+        </li>
+
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/HediffDef[defName="VFEC_CenturionArmorBuff"]/comps/li[@Class="HediffCompProperties_Link"]</xpath>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
