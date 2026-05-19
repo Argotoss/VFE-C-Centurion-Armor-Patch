@@ -61,7 +61,7 @@ $visibilityValue = @{
 Copy-ModContent
 
 $title = 'VFE Classical - Centurion Armor Performance Patch'
-$description = 'Replaces VFE Classical''s per-tick Centurion Armor aura with a throttled implementation that updates every 300 ticks. Keeps the pain threshold buff while removing the expensive every-tick scan and visual link maintenance.'
+$description = 'Fixes VFE Classical''s horrendous performance issue with centurion armor by making the aura buff update every 5 seconds instead of every tick. The buff still works the same, but the performance impact should be non-existent.'
 $previewPath = Join-Path $contentDir 'About\Preview.png'
 
 $vdf = @"
