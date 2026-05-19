@@ -1,6 +1,6 @@
 param(
     [string]$SteamUsername,
-    [string]$PublishedFileId = '0',
+    [string]$PublishedFileId,
     [ValidateSet('Public', 'FriendsOnly', 'Private', 'Unlisted')]
     [string]$Visibility = 'Public',
     [string]$ChangeNote = 'Initial release',
@@ -14,6 +14,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $workshopRoot = Join-Path $repoRoot '.workshop'
 $contentDir = Join-Path $workshopRoot 'content'
 $vdfPath = Join-Path $workshopRoot 'workshop_item.vdf'
+$publishedFileIdPath = Join-Path $repoRoot 'About\PublishedFileId.txt'
 
 function ConvertTo-VdfString {
     param([string]$Value)
@@ -57,6 +58,15 @@ $visibilityValue = @{
     Private = '2'
     Unlisted = '3'
 }[$Visibility]
+
+if ([string]::IsNullOrWhiteSpace($PublishedFileId)) {
+    if (Test-Path -LiteralPath $publishedFileIdPath) {
+        $PublishedFileId = (Get-Content -Raw -LiteralPath $publishedFileIdPath).Trim()
+    }
+    else {
+        $PublishedFileId = '0'
+    }
+}
 
 Copy-ModContent
 
