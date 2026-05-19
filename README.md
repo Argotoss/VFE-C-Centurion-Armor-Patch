@@ -13,3 +13,23 @@ powershell -ExecutionPolicy Bypass -File .\Scripts\Build.ps1
 ```
 
 The build script compiles `1.6\Assemblies\VFECCenturionArmorPatch.dll` against the local RimWorld 1.6 managed assemblies.
+
+## Steam Workshop
+
+Prepare the SteamCMD upload files without publishing:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Scripts\PublishWorkshop.ps1 -PrepareOnly
+```
+
+Publish through SteamCMD:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Scripts\PublishWorkshop.ps1 -SteamUsername YOUR_STEAM_USERNAME
+```
+
+For updates, pass the existing item ID:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Scripts\PublishWorkshop.ps1 -SteamUsername YOUR_STEAM_USERNAME -PublishedFileId 1234567890
+```
