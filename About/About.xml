@@ -5,7 +5,7 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <packageId>argotoss.vfec.centurionarmorpatch</packageId>
+  <packageId>argotoss.vfec.centurionarmorperformancepatch</packageId>
   <description>Fixes VFE Classical's horrendous performance issue with centurion armor by making the aura buff update every 5 seconds instead of every tick. The buff still works the same, but the performance impact should be non-existent.</description>
   <url>https://github.com/Argotoss/VFE-C-Centurion-Armor-Patch</url>
   <modDependencies>
